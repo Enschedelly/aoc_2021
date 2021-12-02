@@ -4,6 +4,9 @@ def parse_file(file, tijpe):
         for line in f.read().splitlines():
             if tijpe == 'int':
                 lines.append(int(line))
+            if tijpe == '(str, int)':
+                (s, i) = line.split()
+                lines.append([s, int(i)])
             else:
                 raise ValueError("Too bad :)")
     return lines
